@@ -268,6 +268,10 @@ variable "dcos_ip_detect_public_contents" {
   default = ""
 }
 
+variable "dcos_ip_detect_public_filename" {
+ default = ""
+}
+
 variable "dcos_rexray_config" {
   default = ""
 }

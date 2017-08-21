@@ -92,6 +92,7 @@ This tf_dcos_core module takes care of all the installation, modification, and u
 - `dcos_overlay_network` - This group of parameters define an virtual network for DC/OS. (optional)
 - `dcos_process_timeout` - The allowable amount of time, in seconds, for an action to begin after the process forks. (optional)
 - `dcos_public_agent_list` - statically set your public agents (not recommended)
+- `dcos_ip_detect_public_filename` - statically set your detect-ip-public path
 - `dcos_rexray_config_filename` - The REX-Ray configuration filename for enabling external persistent volumes in Marathon. (optional)
 - `dcos_rexray_config_method` - The REX-Ray configuration method for enabling external persistent volumes in Marathon.  (optional)
 - `dcos_telemetry_enabled` - change the telemetry option (optional)

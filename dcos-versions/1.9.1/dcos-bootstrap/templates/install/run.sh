@@ -54,6 +54,7 @@ ${dcos_http_proxy== "" ? "" : "http_proxy: ${dcos_http_proxy}"}
 ${dcos_https_proxy== "" ? "" : "https_proxy: ${dcos_https_proxy}"}
 ${dcos_no_proxy== "" ? "" : "no_proxy: ${dcos_no_proxy}"}
 ${dcos_check_time== "" ? "" : "check_time: ${dcos_check_time}"}
+${dcos_ip_detect_public_filename== "" ? "" : "ip_detect_public_filename: ${dcos_ip_detect_public_filename}"}
 ${dcos_ip_detect_public_contents== "" ? "" : "ip_detect_public_contents: ${dcos_ip_detect_public_contents}"}
 ${dcos_docker_remove_delay== "" ? "" : "docker_remove_delay: ${dcos_docker_remove_delay}"}
 ${dcos_audit_logging== "" ? "" : "audit_logging: ${dcos_audit_logging}"}
@@ -73,6 +74,7 @@ ${dcos_package_storage_uri == "" ? "" : "  package_storage_uri: ${dcos_package_s
 EOF
 curl -o dcos_generate_config.${dcos_version}.sh ${dcos_download_path}
 sudo cp /tmp/ip-detect genconf/.
+sudo cp /tmp/ip-detect-public genconf/.
 sudo bash dcos_generate_config.${dcos_version}.sh
 sudo docker rm -f $(docker ps -a -q -f ancestor=nginx)
 sudo docker run -d -p ${dcos_bootstrap_port}:80 -v $PWD/genconf/serve:/usr/share/nginx/html:ro nginx
